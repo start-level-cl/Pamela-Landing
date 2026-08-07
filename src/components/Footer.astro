@@ -1,0 +1,38 @@
+---
+const currentYear = new Date().getFullYear();
+const whatsappUrl = "https://wa.me/56967335190?text=Hola%20Pamela,%20quisiera%20consultar%20por%20un%20proyecto";
+---
+
+<footer class="bg-brand-card/90 border-t border-brand-border/80 pt-12 pb-8 relative">
+  <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    
+    <!-- Footer Slogan from Original Image -->
+    <div class="mb-8 reveal-on-scroll">
+      <p class="font-script text-3xl sm:text-4xl text-brand-brown leading-relaxed max-w-2xl mx-auto">
+        Cumplimos la normativa para que tu construyas tranquilo. <span class="text-brand-gold">♡</span>
+      </p>
+    </div>
+
+    <!-- Contact & Brand details -->
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-6 my-6 text-sm text-brand-brown-muted border-t border-b border-brand-border/60 py-6">
+      <div class="flex items-center gap-2">
+        <span class="font-bold text-brand-brown">Pamela Moya</span>
+        <span>•</span>
+        <span>Arquitecta</span>
+      </div>
+
+      <div class="flex items-center gap-2">
+        <span>Teléfono / WhatsApp:</span>
+        <a href={whatsappUrl} target="_blank" rel="noopener noreferrer" class="font-semibold text-brand-brown hover:text-brand-gold transition-colors">
+          +56 9 6733 5190
+        </a>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <p class="text-xs text-brand-brown-muted/70">
+      &copy; {currentYear} Pamela Moya Arquitecta. Todos los derechos reservados.
+    </p>
+
+  </div>
+</footer>

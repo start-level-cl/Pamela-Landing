@@ -1,0 +1,65 @@
+---
+import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "Pamela Moya | Arquitecta - Regularizaciones y Proyectos",
+	description = "Pamela Moya Arquitecta. Diseñamos, gestionamos y regularizamos tu proyecto (Ley del Mono N.º 20.898, SEREMI de Salud, Restaurantes). Contacto directo +56 9 6733 5190."
+} = Astro.props;
+---
+
+<!usr/bin/env html>
+<html lang="es" class="scroll-smooth">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		
+		<!-- Primary Meta Tags -->
+		<title>{title}</title>
+		<meta name="title" content={title} />
+		<meta name="keywords" content="Pamela Moya, Arquitecta, Regularizacion Ley del Mono, SEREMI Salud, Regularizacion Restaurante, Permisos edificación Chile, Arquitectura Chile" />
+		
+		<!-- Open Graph / Facebook -->
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content={Astro.url} />
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+
+		<!-- Google Fonts Preconnect -->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	</head>
+	<body class="bg-brand-bg text-brand-brown min-h-screen selection:bg-brand-accent selection:text-brand-brown-dark flex flex-col">
+		<slot />
+
+		<!-- Intersection Observer Script for Reveal Animations -->
+		<script>
+			document.addEventListener('DOMContentLoaded', () => {
+				const observerOptions = {
+					root: null,
+					rootMargin: '0px',
+					threshold: 0.1
+				};
+
+				const observer = new IntersectionObserver((entries) => {
+					entries.forEach(entry => {
+						if (entry.isIntersecting) {
+							entry.target.classList.add('is-visible');
+						}
+					});
+				}, observerOptions);
+
+				document.querySelectorAll('.reveal-on-scroll').forEach((el) => {
+					observer.observe(el);
+				});
+			});
+		</script>
+	</body>
+</html>
