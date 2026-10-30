@@ -4,5 +4,5 @@ import tailwind from '@astrojs/tailwind';
 // https://astro.build/config
 export default defineConfig({
   integrations: [tailwind()],
-  site: 'https://web-pamela.vercel.app',
+  site: 'https://pamela-landing.j-a-garcia13m.workers.dev',
 });
