@@ -33,4 +33,4 @@ El build estático se genera en `dist/`.
 
 * dominio personalizado y URL canónica definitiva;
 * `noindex` mientras el sitio se sirva desde `workers.dev`, `robots.txt`, sitemap y página 404 propia;
-* migración a Astro 7 y Tailwind CSS 4 con configuración central del sitio.
+* configuración central del sitio (`site.config.ts`).

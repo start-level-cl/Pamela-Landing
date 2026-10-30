@@ -1,8 +1,47 @@
-@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Alex+Brush&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600;700&display=swap')
+layer(base);
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+
+@theme {
+  --color-brand-bg: #fdfbf7;
+  --color-brand-card: #f6efe9;
+  --color-brand-card-hover: #efe2d6;
+  --color-brand-border: #e3d3c4;
+  --color-brand-accent: #e5d5c6;
+  --color-brand-gold: #b89775;
+  --color-brand-gold-dark: #9a7b5a;
+  --color-brand-brown: #4a3b32;
+  --color-brand-brown-muted: #7a6b60;
+  --color-brand-brown-dark: #2b221c;
+  --color-brand-whatsapp: #25d366;
+  --color-brand-whatsapp-hover: #1ebe5a;
+
+  --font-script: 'Alex Brush', 'Cormorant Garamond', serif, cursive;
+  --font-serif: 'Cormorant Garamond', 'Cinzel', serif;
+  --font-sans: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+
+  --shadow-warm: 0 10px 30px -10px rgba(74, 59, 50, 0.08);
+  --shadow-warm-hover: 0 20px 40px -12px rgba(74, 59, 50, 0.15);
+}
+
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
+}
 
 @layer base {
   html {
